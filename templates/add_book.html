@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new books</title>
+</head>
+<body>
+    <h1>Add a new book</h1>
+    <form method="POST" action="/add">
+        <label >Title:</label><br>
+        <input type="text" name="title" required><br><br>
+        <label >Author:</label>
+        <input type="text" name="author" required><br><br>
+        <label >Year:</label>
+        <input type="number" name="year" required><br><br>
+        <label >ISBN:</label>
+        <input type="text" name="isbn" required><br><br>
+        <!-- <input type="submit" value="Add Book">
+          -->
+        <button type="submit">Add book</button>
+
+    </form>
+    <br>
+    <a href="{{url_for('home')}}">Back to Home</a>
+</body>
+</html>

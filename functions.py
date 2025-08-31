@@ -1,6 +1,13 @@
 from dp import get_connection
 
-def add_book(title, author, year, isbn):
+def delete_book_from_db(book_id):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM books where id=?",(book_id))
+    conn.commit()
+    conn.close()
+
+def insert_book(title, author, year, isbn):
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("INSERT INTO books (title, author, year, isbn) VALUES (?, ?, ?, ?)",
